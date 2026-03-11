@@ -1,0 +1,100 @@
+<header class="header">
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <img src="/images/logo-black.png" alt="Northway Construction" width="150" height="40">
+    </a>
+
+    <nav class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/services/pre-construction/" class="nav-link">Pre-Construction</a>
+      <a href="/services/construction/" class="nav-link">Construction</a>
+      <a href="/projects/" class="nav-link">Projects</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+12537358100" class="phone-link">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        (253) 735-8100
+      </a>
+      <a href="/contact/" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <div class="mobile-nav">
+      <a href="tel:+12537358100" class="mobile-phone">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+      </a>
+      <button class="menu-toggle" aria-label="Open menu">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header">
+    <span class="mobile-menu-title">Menu</span>
+    <button class="mobile-menu-close" aria-label="Close menu">
+      <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="mobile-menu-nav">
+    <a href="/" class="mobile-menu-link">Home</a>
+    <a href="/services/pre-construction/" class="mobile-menu-link">Pre-Construction</a>
+    <a href="/services/construction/" class="mobile-menu-link">Construction</a>
+    <a href="/projects/" class="mobile-menu-link">Projects</a>
+    <a href="/about/" class="mobile-menu-link">About</a>
+    <a href="/contact/" class="mobile-menu-link">Contact</a>
+  </nav>
+
+  <div class="mobile-menu-footer">
+    <a href="tel:+12537358100" class="mobile-phone-cta">
+      <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+      (253) 735-8100
+    </a>
+    <a href="/contact/" class="btn btn-primary btn-block">Get Started</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuClose = document.querySelector('.mobile-menu-close');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.mobile-menu-overlay');
+  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', openMenu);
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+  if (overlay) overlay.addEventListener('click', closeMenu);
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+</script>

@@ -6,23 +6,14 @@
   <title>{{ title }} | Northway Construction | Commercial General Contractor</title>
   <meta name="description" content="{{ description }}">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="{{ title }} | Northway Construction">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:type" content="website">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/logo-black.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/styles.css">
 
-  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,140 +48,17 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://northwayinc.com/#organization",
-    "name": "Northway Construction Inc.",
-    "additionalType": "http://www.productontology.org/id/General_contractor",
-    "location": [
-      {
-        "@type": "Place",
-        "name": "Northway Construction - Pacific, WA (Headquarters)",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1433 Valentine Avenue SE #102",
-          "addressLocality": "Pacific",
-          "addressRegion": "WA",
-          "postalCode": "98047",
-          "addressCountry": "US"
-        },
-        "telephone": "(253) 735-8100",
-        "faxNumber": "(253) 987-7483"
-      },
-      {
-        "@type": "Place",
-        "name": "Northway Construction - Mountain Division (Eagle Mountain, UT)",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "3535 Ranches Parkway, Suite C",
-          "addressLocality": "Eagle Mountain",
-          "addressRegion": "UT",
-          "postalCode": "84005",
-          "addressCountry": "US"
-        },
-        "telephone": "(385) 208-4433"
-      }
-    ]
-  }
-  </script>
-
   {{ schema | safe }}
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header">
-    <nav class="nav-container">
-      <a href="/" aria-label="Northway Construction Home">
-        <img src="/images/logo-white.png" alt="Northway Construction" class="site-logo">
-      </a>
+  {% include "header.njk" %}
 
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('active')">
-        ☰
-      </button>
-
-      <div class="main-nav">
-        <ul>
-          <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
-          <li><a href="/services/pre-construction/" {% if "/services/pre-construction/" in page.url %}class="active"{% endif %}>Pre-Construction</a></li>
-          <li><a href="/services/construction/" {% if "/services/construction/" in page.url %}class="active"{% endif %}>Construction</a></li>
-          <li><a href="/projects/" {% if "/projects/" in page.url %}class="active"{% endif %}>Projects</a></li>
-          <li><a href="/about/" {% if "/about/" in page.url %}class="active"{% endif %}>About</a></li>
-          <li><a href="/contact/" {% if "/contact/" in page.url %}class="active"{% endif %}>Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main Content -->
   <main>
     {{ content | safe }}
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Northway Construction</h3>
-          <p>Trusted commercial general contractor delivering cost-effective, high-quality construction across the Pacific Northwest and Utah for over 20 years.</p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Headquarters</h3>
-          <p>
-            1433 Valentine Avenue SE #102<br>
-            Pacific, WA 98047<br>
-            Phone: <a href="tel:+12537358100">(253) 735-8100</a><br>
-            Fax: (253) 987-7483
-          </p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Mountain Division</h3>
-          <p>
-            3535 Ranches Parkway, Suite C<br>
-            Eagle Mountain, UT 84005<br>
-            Phone: <a href="tel:+13852084433">(385) 208-4433</a>
-          </p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/services/pre-construction/">Pre-Construction Services</a></li>
-            <li><a href="/services/construction/">Construction Services</a></li>
-            <li><a href="/projects/">Project Gallery</a></li>
-            <li><a href="/about/">About Us</a></li>
-            <li><a href="/contact/">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Northway Construction Inc. All rights reserved.</p>
-        <p class="gullstack-credit">Website by <a href="https://gullstack.com" target="_blank" rel="noopener">GullStack</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile nav toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const navToggle = document.querySelector('.nav-toggle');
-      const mainNav = document.querySelector('.main-nav');
-
-      if (navToggle && mainNav) {
-        mainNav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mainNav.classList.remove('active');
-          });
-        });
-      }
-    });
-  </script>
+  {% include "footer.njk" %}
 
 </body>
 </html>
